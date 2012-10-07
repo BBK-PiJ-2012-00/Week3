@@ -5,7 +5,7 @@ int counter = 2
 int test = 3
 int divisor = 2
 boolean isPrime = true
-while (counter < 1000) {
+while (counter <= 1000) {
 	if (divisor == (test - 1)) {
 		if (test % divisor == 0) {
 			isPrime = false
