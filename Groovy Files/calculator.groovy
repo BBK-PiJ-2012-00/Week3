@@ -8,7 +8,7 @@ println "+ (Addition)"
 println "- (Subtraction)"
 double result
 char operation = System.console().readLine()
-if (operation == "/") {
+if (operation == '/u002F') {
 	result = firstNumber / secondNumber
 	}
 else if (operation == "*") {
