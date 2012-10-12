@@ -29,8 +29,23 @@ while (charCount < length) {
 int decimalLength = decimal.length()
 String finalNumber = number + decimal
 int fNum  = Integer.parseInt(finalNumber)
-println fNum
-println decimalLength
+if (fNum % 2 != 0) {
+	fNum = fNum + 1
+	fNum = fNum / 2
+	double d = fNum - 0.5
+	divisor = Math.pow(10,decimalLength)
+	d = d / divisor
+	println d
+}
+else {
+	fNum = fNum / 2
+	divisor = Math.pow(10,decimalLength)
+	double d = fNum / divisor
+	println d
+}
 
 
-//times by 10E(amount of decimal places), divide by 2, divide by 10E(decimal places)
+
+
+
+//times by 10^(amount of decimal places) - this is effectively done when two strings containing number and decimal are put together, divide by 2, divide by 1^E(decimal places)
