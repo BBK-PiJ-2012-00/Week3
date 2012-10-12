@@ -3,16 +3,34 @@ String s = System.console().readLine()
 int length = s.length() 
 int charCount = 0
 String number = ""
+String decimal = ""
 char c
+boolean postDecimal = false
 while (charCount < length) {
-	c = s.charAt(charCount)
-	charCount++
-		if (c < '\u0030') {
+	if (!postDecimal) {
+		c = s.charAt(charCount)
+		charCount++
+		if (c == '\u002C') {
 		//do nothing
 		}
 		else if (c >= '\u0030') {
 		number = number + c
 		}
+		else if (c == '\u002E') {
+		postDecimal = true
+		}
+	}
+	if (postDecimal) {
+		c = s.charAt(charCount)
+		charCount++
+		decimal = decimal + c
+	}
 }
-int i = Integer.parseInt(number)
-println i
+int decimalLength = decimal.length()
+String finalNumber = number + decimal
+int fNum  = Integer.parseInt(finalNumber)
+println fNum
+println decimalLength
+
+
+//times by 10E(amount of decimal places), divide by 2, divide by 10E(decimal places)
