@@ -47,7 +47,6 @@ double thirdTotal = third.x + third.y
  	else if (thirdTotal < sortMid) {
  		sortMin = thirdTotal
  	}
-println sortMin + " " + sortMid + " " + sortMax
 //Sort phase: working.
 if ((sortMax - sortMid) > (sortMid - sortMin)) {
 	if (((sortMid == firstTotal) && (sortMin == secondTotal)) || ((sortMid == secondTotal) && (sortMin == firstTotal))) {
