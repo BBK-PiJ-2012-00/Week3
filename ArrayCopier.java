@@ -12,13 +12,11 @@ public class ArrayCopier {
 		secondArray[2] = 5;
 		secondArray[3] = 6;	
 	}
-
 	public void copy(int[] firstArray, int[] secondArray){
 		int[] src = firstArray;
 		int srcLength = src.length;
 		int[] dst = secondArray;
-		int dstLength = dst.length;
-		
+		int dstLength = dst.length;		
 		if(srcLength < dstLength) {
 			int difference = dstLength - srcLength;
 			int counter;
@@ -26,7 +24,21 @@ public class ArrayCopier {
 				dst[counter] = 0;
 				counter++;
 			}
+			dst = src;
 		}
-		System.out.println(secondArray[2]);
+		if (srcLength == dstLength) {
+			dst = src;
+		}
+		if (srcLength > dstLength) {
+			int difference = srcLength - dstLength;
+			int counter;
+			int[] srcShortCopy;
+			srcShortCopy = new int[dstLength];
+			for (counter = 0; counter <= dstLength; counter++) {
+				int contents = src[counter];
+				srcShortCopy[counter] = contents;
+			}
+			dst = srcShortCopy;
+		}
 	}
 }
