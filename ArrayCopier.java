@@ -16,33 +16,34 @@ public class ArrayCopier {
 		int srcLength = src.length;
 		int dstLength = dst.length;		
 		if(srcLength < dstLength) {
-			int difference = dstLength - srcLength;
 			int counter;
-			for (counter = difference; counter < dstLength; counter++) {
+			for (counter = 0; counter < srcLength; counter++) {
+				dst[counter] = src[counter];
+			}
+			for (counter = srcLength; counter < dstLength; counter++) {
 				dst[counter] = 0;
-				counter++;
 			}
-			dst = src;
 		}
-		if (srcLength == dstLength) {
-			dst = src;
-		}
-		if (srcLength > dstLength) {
-			int difference = srcLength - dstLength;
+		
+		else if (srcLength == dstLength) {
 			int counter;
-			int[] srcShortCopy;
-			srcShortCopy = new int[dstLength];
-			for (counter = 0; counter < dstLength; counter++) {
-				int contents = src[counter];
-				srcShortCopy[counter] = contents;
+			for (counter = 0; counter < srcLength; counter++) {
+				dst[counter] = src[counter];
 			}
-			dst = srcShortCopy; //copying pointer only -- lost
+		}
+		
+		else if (srcLength > dstLength) {
+			int counter;
+			for (counter = 0; counter < dstLength; counter++) {
+				dst[counter] = src[counter];
+			}			
 		}
 	}
 	
 	public static void main(String[] args) {
 		int[] firstArray;
 		int[] secondArray;
+
 		firstArray = new int[7];
 		firstArray[0] = 1;
 		firstArray[1] = 2;
@@ -51,6 +52,7 @@ public class ArrayCopier {
 		firstArray[4] = 2;
 		firstArray[5] = 2;
 		firstArray[6] = 2;
+		
 		secondArray = new int[4];
 		secondArray[0] = 3;
 		secondArray[1] = 4;
