@@ -1,12 +1,10 @@
 public class EmployeeID {
 
-	private String emp0, emp1, emp2, emp3, emp4, emp5, emp6, emp7, emp8, emp9; 
-	private int id0, id1, id2, id3, id4, id5, id6, id7, id8, id9;
+	private String emp; 
+	private int id;
+	private String[] employeeArray;
+	private int[] idArray;
 	
-	public EmployeeID(String s, int i) {
-		this.s = s;
-		this.i = i;
-	} 
 	
 	public void assignEmployee(String emp, int id) {
 		String[] employeeArray;
@@ -40,10 +38,6 @@ public class EmployeeID {
 			employeeArray[counter] = emp;
 			idArray[counter] = id;
 		}
-		int printCounter = 0;
-		for (printCounter = 0; counter < 10; counter++) {
-			System.out.println("The " + printCounter + " employee's name is " + employeeArray[printCounter] + ", ID: " + idArray[printCounter] + ".");
-		}
-}
+	}
 }
 		
